@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StreetCricket4u | The Digital Arena</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;800;900&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#18477d",
+              "inverse-surface": "#e3e2e5",
+              "on-primary-fixed": "#00210b",
+              "tertiary": "#eac400",
+              "surface-container-low": "#1a1c1e",
+              "inverse-primary": "#006d35",
+              "background": "#121316",
+              "tertiary-container": "#caa900",
+              "primary-fixed-dim": "#00e475",
+              "on-secondary-container": "#8fb7f4",
+              "on-primary": "#003918",
+              "on-tertiary": "#3a3000",
+              "error-container": "#93000a",
+              "surface-container-high": "#292a2d",
+              "on-secondary": "#00315f",
+              "tertiary-fixed": "#ffe170",
+              "surface-container-highest": "#343537",
+              "on-tertiary-fixed": "#221b00",
+              "on-primary-fixed-variant": "#005226",
+              "surface-container": "#1e2022",
+              "primary-container": "#003215",
+              "on-tertiary-container": "#4c3f00",
+              "tertiary-fixed-dim": "#e9c400",
+              "outline": "#8e9199",
+              "outline-variant": "#43474e",
+              "secondary": "#a6c8ff",
+              "primary": "#00e475",
+              "surface": "#121316",
+              "on-secondary-fixed": "#001c3a",
+              "on-tertiary-fixed-variant": "#544600",
+              "secondary-container": "#18477d",
+              "error": "#ffb4ab",
+              "inverse-on-surface": "#2f3033",
+              "primary-fixed": "#62ff96",
+              "surface-container-lowest": "#0d0e11",
+              "on-error-container": "#ffdad6",
+              "on-background": "#e3e2e5",
+              "surface-tint": "#00e475",
+              "secondary-fixed": "#d4e3ff",
+              "surface-bright": "#38393c",
+              "on-surface-variant": "#c4c6cf",
+              "secondary-fixed-dim": "#a6c8ff",
+              "on-primary-container": "#00a854",
+              "surface-dim": "#121316",
+              "surface-variant": "#343537",
+              "on-surface": "#e3e2e5",
+              "on-error": "#690005"
+            },
+            fontFamily: {
+              "headline": ["Lexend"],
+              "body": ["Manrope"],
+              "label": ["Lexend"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+      }
+      .liquid-gradient {
+        background: radial-gradient(circle at 50% 50%, rgba(0, 228, 117, 0.15) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(24, 71, 125, 0.2) 0%, transparent 40%);
+      }
+      .blob {
+        position: absolute;
+        filter: blur(80px);
+        z-index: -1;
+        animation: drift 20s infinite alternate linear;
+      }
+      @keyframes drift {
+        0% { transform: translate(0, 0) scale(1); }
+        100% { transform: translate(100px, 50px) scale(1.1); }
+      }
+      .glow-shadow-primary {
+        box-shadow: 0 0 40px -10px rgba(0, 228, 117, 0.3);
+      }
+      .glow-shadow-secondary {
+        box-shadow: 0 0 40px -10px rgba(166, 200, 255, 0.2);
+      }
+    </style>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&amp;display=swap" rel="stylesheet"/></head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+<nav class="fixed top-0 w-full z-50 no-border bg-slate-950/80 backdrop-blur-2xl border-b border-white/5 shadow-2xl">
+<div class="flex justify-between items-center px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black italic text-emerald-400 tracking-tighter font-lexend uppercase flex items-center" style="font-family: 'Righteous', cursive;">
+                StreetCricket4u
+            </div>
+<div class="hidden md:flex items-center gap-8 h-full">
+<a class="text-emerald-400 border-b-2 border-emerald-400 pb-1 font-lexend tracking-tight uppercase" href="#">Leagues</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors font-lexend tracking-tight uppercase" href="#">Players</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors font-lexend tracking-tight uppercase" href="#">Matches</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors font-lexend tracking-tight uppercase" href="#">Rankings</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors font-lexend tracking-tight uppercase" href="#">Shop</a>
+</div>
+<div class="flex items-center gap-4 h-full self-center">
+<button class="material-symbols-outlined text-slate-400 hover:text-white transition-all scale-95 active:scale-90" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-slate-400 hover:text-white transition-all scale-95 active:scale-90" data-icon="person">person</button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold font-label text-sm uppercase transition-all hover:brightness-110 active:scale-95 glow-shadow-primary">
+                    Join Arena
+                </button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[900px] flex items-center justify-center overflow-hidden px-6">
+<!-- Liquid Background -->
+<div class="absolute inset-0 z-0">
+<div class="blob w-[600px] h-[600px] bg-primary/20 rounded-full -top-40 -left-40"></div>
+<div class="blob w-[500px] h-[500px] bg-secondary-container/30 rounded-full -bottom-20 -right-20" style="animation-delay: -5s;"></div>
+<div class="absolute inset-0 bg-background/40 backdrop-blur-[2px]"></div>
+</div>
+<!-- Hero Content -->
+<div class="relative z-10 max-w-6xl text-center space-y-12">
+<!-- Watermark Logo -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl opacity-10 pointer-events-none select-none z-0">
+<img alt="" class="w-full h-auto drop-shadow-[0_0_50px_rgba(0,228,117,0.3)]" src="https://lh3.googleusercontent.com/aida/ADBb0uibEEariIu06vgpP6bW1Jc2kw6a7YeNFwkNA8-cSnmu1uTaCzXgC-WFl1oAe8RwQGGLAipAEdISw3zfBRuUr0d08-kd8fCSO4ZGcL02MRlcT1BDuaQBbRwDkdWmDcXYnZ9tUCLoSVWyTbxTWGL5UjGMx5m5YhCck3n17MbYXd7cj2T3MBpoGJetVU21DlKKQXhre7cLRUANVoLU6P4av_if0qoU1fel4QwFfSr9OCAcDWe18VxnDGj5GPFMca3XdzOBTlxOwyIVAg"/>
+</div>
+<div class="relative z-10">
+<div class="mb-8 relative z-20 flex justify-center">
+<div class="glass-effect p-4 rounded-full shadow-2xl glow-shadow-primary">
+<img alt="StreetCricket4u Logo" class="h-32 md:h-40 w-auto drop-shadow-[0_0_15px_rgba(0,228,117,0.4)]" src="https://lh3.googleusercontent.com/aida/ADBb0uibEEariIu06vgpP6bW1Jc2kw6a7YeNFwkNA8-cSnmu1uTaCzXgC-WFl1oAe8RwQGGLAipAEdISw3zfBRuUr0d08-kd8fCSO4ZGcL02MRlcT1BDuaQBbRwDkdWmDcXYnZ9tUCLoSVWyTbxTWGL5UjGMx5m5YhCck3n17MbYXd7cj2T3MBpoGJetVU21DlKKQXhre7cLRUANVoLU6P4av_if0qoU1fel4QwFfSr9OCAcDWe18VxnDGj5GPFMca3XdzOBTlxOwyIVAg"/>
+</div>
+</div>
+<h1 class="font-headline font-black text-6xl md:text-9xl tracking-tighter italic uppercase leading-[0.85] drop-shadow-2xl">
+                        Street <span class="text-primary">Cricket</span><br/>4u
+                    </h1>
+<p class="max-w-2xl mx-auto text-xl md:text-2xl text-on-surface-variant font-medium leading-relaxed mt-8 bg-black/20 backdrop-blur-2xl py-4 px-8 rounded-full inline-block border border-white/10 shadow-lg">
+                        Elevating street cricket from the concrete to the cloud.
+                    </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6 pt-12">
+<button class="group relative bg-primary text-on-primary px-12 py-5 rounded-full font-black font-label text-xl uppercase flex items-center gap-3 overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-xl shadow-primary/25 glow-shadow-primary">
+<span>Subscribe &amp; Follow</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="glass-effect px-12 py-5 rounded-full font-bold font-label text-xl uppercase text-on-background hover:bg-white/10 transition-colors">
+                            Explore Matches
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Connection Blocks (Liquid Glass Bento) -->
+<section class="max-w-screen-2xl mx-auto px-6 py-32">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Instagram Connection -->
+<div class="md:col-span-7 glass-effect rounded-[3rem] p-8 md:p-12 relative overflow-hidden group min-h-[450px] flex flex-col justify-between glow-shadow-secondary">
+<div class="absolute -top-10 -right-10 p-8">
+<span class="material-symbols-outlined text-[180px] text-primary/5 group-hover:text-primary/10 transition-all duration-700 rotate-12" data-icon="photo_camera" style="font-variation-settings: 'FILL' 1;">photo_camera</span>
+</div>
+<div class="relative z-10">
+<div class="bg-primary/20 backdrop-blur-xl text-primary px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest inline-block mb-8 border border-primary/20">
+                            Social Feed
+                        </div>
+<h2 class="font-headline text-5xl md:text-6xl font-black italic uppercase leading-tight mb-6">
+                            Catch the <br/><span class="text-primary drop-shadow-[0_0_15px_rgba(0,228,117,0.3)]">Vibe</span>
+</h2>
+<p class="text-on-surface-variant text-xl font-medium max-w-sm leading-relaxed">
+                            Daily street clips, behind-the-scenes madness, and player spotlights. 
+                        </p>
+</div>
+<div class="relative z-10 mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-8">
+<div class="flex items-center gap-4 bg-white/5 backdrop-blur-xl px-6 py-3 rounded-full border border-white/10">
+<div class="w-10 h-10 rounded-full bg-gradient-to-tr from-tertiary to-primary flex items-center justify-center p-0.5">
+<div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="alternate_email">alternate_email</span>
+</div>
+</div>
+<span class="font-headline font-bold text-xl">@streetcricket4u</span>
+</div>
+<a class="w-full sm:w-auto bg-primary text-on-primary px-10 py-4 rounded-full font-bold font-label uppercase text-sm flex items-center justify-center gap-2 hover:brightness-110 hover:shadow-lg hover:shadow-primary/30 transition-all glow-shadow-primary" href="https://instagram.com/streetcricket4u" target="_blank">
+                            Follow on Instagram
+                        </a>
+</div>
+</div>
+<!-- YouTube Connection -->
+<div class="md:col-span-5 glass-effect bg-secondary-container/40 rounded-[3rem] p-8 md:p-12 relative overflow-hidden group flex flex-col justify-between glow-shadow-secondary">
+<div class="absolute -bottom-16 -right-16 opacity-10 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-[240px]" data-icon="play_circle" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+<div class="relative z-10">
+<div class="bg-white/10 backdrop-blur-xl text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest inline-block mb-8 border border-white/10">
+                            Full Length
+                        </div>
+<h2 class="font-headline text-5xl font-black italic uppercase leading-tight text-white mb-6">
+                            The <span class="text-on-secondary-container">Full</span> <br/>Innings
+                        </h2>
+<p class="text-on-secondary-container text-xl font-medium leading-relaxed">
+                            Match highlights, player documentaries, and technical breakdowns.
+                        </p>
+</div>
+<div class="relative z-10 mt-12">
+<div class="flex items-center gap-3 mb-8 bg-white/5 backdrop-blur-xl w-fit px-6 py-3 rounded-full border border-white/10">
+<span class="font-headline font-bold text-xl text-white">@streetcricket_4u</span>
+</div>
+<a class="w-full bg-white text-secondary-container px-10 py-4 rounded-full font-black font-label uppercase text-sm flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-all shadow-xl shadow-black/20" href="https://youtube.com/@streetcricket_4u" target="_blank">
+                            Subscribe on YouTube
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Enroll to Play Section (Moved here) -->
+<section class="max-w-screen-2xl mx-auto px-6 py-32 relative overflow-hidden">
+<div class="blob w-[400px] h-[400px] bg-primary/10 rounded-full top-1/2 -right-40"></div>
+<div class="relative z-10 glass-effect rounded-[3rem] p-8 md:p-16 max-w-4xl mx-auto glow-shadow-primary">
+<div class="text-center mb-12">
+<h2 class="font-headline text-5xl md:text-7xl font-black italic uppercase leading-tight text-white mb-6">
+                    Enroll to <span class="text-primary drop-shadow-[0_0_15px_rgba(0,228,117,0.3)]">Play</span>
+</h2>
+<p class="text-on-surface-variant text-xl font-medium max-w-lg mx-auto">
+                    Join the ranks and show your skills in the digital arena. 
+                </p>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="block font-headline font-bold text-sm uppercase tracking-widest text-primary px-2" for="name">Name</label>
+<input class="w-full bg-white/5 border border-white/10 rounded-full px-6 py-4 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all backdrop-blur-md" id="name" placeholder="Your Full Name" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block font-headline font-bold text-sm uppercase tracking-widest text-primary px-2" for="age">Age</label>
+<input class="w-full bg-white/5 border border-white/10 rounded-full px-6 py-4 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all backdrop-blur-md" id="age" placeholder="How old are you?" type="number"/>
+</div>
+<div class="space-y-2">
+<label class="block font-headline font-bold text-sm uppercase tracking-widest text-primary px-2" for="position">Position</label>
+<select class="w-full bg-white/5 border border-white/10 rounded-full px-6 py-4 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all backdrop-blur-md appearance-none" id="position">
+<option class="bg-slate-900" value="batsman">Batsman</option>
+<option class="bg-slate-900" value="bowler">Bowler</option>
+<option class="bg-slate-900" value="all-rounder">All-rounder</option>
+<option class="bg-slate-900" value="wicket-keeper">Wicket Keeper</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="block font-headline font-bold text-sm uppercase tracking-widest text-primary px-2" for="phone">Phone Number</label>
+<input class="w-full bg-white/5 border border-white/10 rounded-full px-6 py-4 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all backdrop-blur-md" id="phone" placeholder="+1 (234) 567-890" type="tel"/>
+</div>
+<div class="md:col-span-2 pt-6">
+<button class="w-full bg-primary text-on-primary px-12 py-5 rounded-full font-black font-label text-xl uppercase flex items-center justify-center gap-3 overflow-hidden transition-all hover:scale-[1.02] active:scale-95 shadow-xl shadow-primary/25 glow-shadow-primary" type="submit">
+<span>Submit Application</span>
+<span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+<p class="mt-8 text-center text-slate-500 text-sm font-medium">
+                        Note: Enrollment data will be sent to <a class="text-primary hover:underline" href="mailto:streetcricket4u@gmail.com">streetcricket4u@gmail.com</a> for review.
+                    </p>
+</div>
+</form>
+</div>
+</section>
+</main>
+<!-- Simplified Footer -->
+<footer class="w-full border-t border-white/5 bg-slate-950/80 backdrop-blur-2xl font-manrope text-sm tracking-wide mt-20">
+<div class="max-w-screen-2xl mx-auto px-8 py-16">
+<div class="flex flex-col items-center gap-12">
+<div class="text-center space-y-4">
+<h3 class="font-headline text-3xl font-black italic uppercase tracking-tight text-emerald-400">Connect with us</h3>
+<p class="text-slate-400 text-lg">Join the global street cricket community on our social platforms.</p>
+</div>
+<div class="flex gap-12 items-center">
+<!-- Instagram Link -->
+<a class="group flex flex-col items-center gap-3 transition-all" href="https://instagram.com/streetcricket4u" target="_blank">
+<div class="w-20 h-20 rounded-full glass-effect flex items-center justify-center group-hover:scale-110 group-hover:bg-primary/10 transition-all border border-white/10 glow-shadow-secondary">
+<svg class="w-10 h-10 fill-white group-hover:fill-primary transition-colors" viewbox="0 0 24 24">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</div>
+<span class="font-headline font-bold text-slate-400 group-hover:text-white">@streetcricket4u</span>
+</a>
+<!-- YouTube Link -->
+<a class="group flex flex-col items-center gap-3 transition-all" href="https://youtube.com/@streetcricket_4u" target="_blank">
+<div class="w-20 h-20 rounded-full glass-effect flex items-center justify-center group-hover:scale-110 group-hover:bg-primary/10 transition-all border border-white/10 glow-shadow-secondary">
+<svg class="w-10 h-10 fill-white group-hover:fill-primary transition-colors" viewbox="0 0 24 24">
+<path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg>
+</div>
+<span class="font-headline font-bold text-slate-400 group-hover:text-white">@streetcricket_4u</span>
+</a>
+</div>
+<div class="pt-8 border-t border-white/5 w-full text-center">
+<p class="text-slate-500 font-medium tracking-normal">© 2026 StreetCricket4u. All Rights Reserved.</p><p class="mt-2 text-slate-500 font-medium tracking-normal">Website Created by- Adarsh Yadav along with Instagram id - <a class="text-primary hover:underline" href="https://www.instagram.com/crick_adarsh/" target="_blank">crick_adarsh</a></p>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
